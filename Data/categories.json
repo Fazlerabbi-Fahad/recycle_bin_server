@@ -3,13 +3,13 @@
         "id": "01",
         "name": "Living Room",
         "types": "Single bed,Double bed,Almirah,Weardrops and etc",
-        "img": ""
+        "img": "https://i.ibb.co/7VsBzH7/spacejoy-IH7w-Psjwomc-unsplash.jpg"
     },
     {
         "id": "02",
         "name": "Reading Room",
         "types": "Table,Chair,Book Shelf and etc",
-        "img": ""
+        "img": "https://i.ibb.co/982R2fh/beazy-Ouywrt-Cmr-R0-unsplash.jpg"
     },
     {
         "id": "03",
