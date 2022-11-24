@@ -35,6 +35,17 @@ async function run() {
             const results = await productsCollection.find(query).toArray();
             res.send(results)
         })
+        app.get('/addDate', async (req, res) => {
+            const filter = {};
+            const option = { upsert: true };
+            const updateDoc = {
+                $currentDate: {
+                    postedAt: true
+                }
+            }
+            const results = await productsCollection.updateMany(filter, updateDoc, option);
+            res.send(results)
+        })
 
 
         app.get('/products/:id', async (req, res) => {
