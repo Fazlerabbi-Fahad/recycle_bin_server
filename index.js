@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 
-const { MongoClient, ServerApiVersion } = require('mongodb');
+const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 const port = process.env.PORT || 5000;
 require('dotenv').config()
 
@@ -19,6 +19,7 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 
 async function run() {
     const categoriesCollection = client.db('recycleBIN').collection('categories');
+    const productsCollection = client.db('recycleBIN').collection('products');
 
     try {
         app.get('/categories', async (req, res) => {
@@ -26,6 +27,23 @@ async function run() {
             const results = await categoriesCollection.find(query).toArray();
             res.send(results)
         })
+
+
+        //get products
+        app.get('/products', async (req, res) => {
+            const query = {};
+            const results = await productsCollection.find(query).toArray();
+            res.send(results)
+        })
+
+
+        app.get('/products/:id', async (req, res) => {
+            const id = req.params.id;
+            const query = { categories_ID: id }
+            const results = await productsCollection.find(query).toArray();
+            res.send(results)
+        })
+
 
     }
     finally {

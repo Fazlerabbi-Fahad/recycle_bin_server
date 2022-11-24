@@ -1,17 +1,62 @@
 [
     {
-        "name": "Living Room",
-        "types": "Single bed,Double bed,Almirah,Weardrops and etc",
-        "img": "https://i.ibb.co/7VsBzH7/spacejoy-IH7w-Psjwomc-unsplash.jpg"
+        "img": "https://i.ibb.co/8sQJw51/kenny-eliason-i-Aftd-Icgp-Fc-unsplash.jpg",
+        "name": "Double bed",
+        "location": "Dhaka",
+        "resalePrice": "35000",
+        "originalPrice": "50000",
+        "categories_ID": "637fe04ce80b236a92d5387c",
+        "yearsOfUse": "1",
+        "sellerName": "Md Hossain Raj"
     },
     {
-        "name": "Reading Room",
-        "types": "Table,Chair,Book Shelf and etc",
-        "img": "https://i.ibb.co/982R2fh/beazy-Ouywrt-Cmr-R0-unsplash.jpg"
+        "img": "https://i.ibb.co/wSJZvc2/becca-schultz-l6-Benhr-Ic2w-unsplash.jpg",
+        "name": "Single bed",
+        "location": "Dhaka",
+        "resalePrice": "10000",
+        "originalPrice": "12000",
+        "categories_ID": "637fe04ce80b236a92d5387c",
+        "yearsOfUse": "0.5",
+        "sellerName": "Md Hossain Raj"
     },
     {
-        "name": "Dinning Room",
-        "types": "Dinning Table,Chairs and etc",
-        "img": "https://i.ibb.co/KD6GLQ5/don-kaveen-NFbwes-e-j-I-unsplash.jpg"
+        "img": "https://i.ibb.co/vPp9MMp/jeffery-ho-TIN-Lh9-Y7g-unsplash.jpg",
+        "name": "Adjusted table",
+        "location": "Dhaka",
+        "resalePrice": "10000",
+        "originalPrice": "6000",
+        "categories_ID": "637fe04ce80b236a92d5387d",
+        "yearsOfUse": "1",
+        "sellerName": "Md Abdul Ahad"
+    },
+    {
+        "img": "https://i.ibb.co/54yPX2p/natural-goods-berlin-L6-NP4-ZGnp-SY-unsplash.jpg",
+        "name": "Adjusted shelf",
+        "location": "Dhaka",
+        "resalePrice": "1000",
+        "originalPrice": "500",
+        "categories_ID": "637fe04ce80b236a92d5387d",
+        "yearsOfUse": "0.5",
+        "sellerName": "Md Abdul Ahad"
+    },
+    {
+        "img": "https://i.ibb.co/rkPR88M/yann-maignan-x3-BCSWCAtr-Y-unsplash.jpg",
+        "name": "Dinning table",
+        "location": "Dhaka",
+        "resalePrice": "60000",
+        "originalPrice": "35000",
+        "categories_ID": "637fe04ce80b236a92d5387e",
+        "yearsOfUse": "1",
+        "sellerName": "Afra Raihana"
+    },
+    {
+        "img": "https://i.ibb.co/Mhqm1gV/kari-shea-t-OVmshavtoo-unsplash.jpg",
+        "name": "Chair",
+        "location": "Dhaka",
+        "resalePrice": "6000",
+        "originalPrice": "3000",
+        "categories_ID": "637fe04ce80b236a92d5387e",
+        "yearsOfUse": "0.5",
+        "sellerName": "Afra Raihana"
     }
 ]
