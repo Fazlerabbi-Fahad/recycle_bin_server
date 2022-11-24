@@ -1,0 +1,20 @@
+[
+    {
+        "id": "01",
+        "name": "Living Room",
+        "types": "Single bed,Double bed,Almirah,Weardrops and etc",
+        "img": ""
+    },
+    {
+        "id": "02",
+        "name": "Reading Room",
+        "types": "Table,Chair,Book Shelf and etc",
+        "img": ""
+    },
+    {
+        "id": "03",
+        "name": "Dinning Room",
+        "types": "Dinning Table,Chairs and etc",
+        "img": "https://i.ibb.co/KD6GLQ5/don-kaveen-NFbwes-e-j-I-unsplash.jpg"
+    }
+]

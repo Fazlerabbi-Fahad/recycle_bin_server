@@ -7,6 +7,13 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
+const categories = require('./Data/categories.json')
+
+app.get('/categories', (req, res) => {
+    res.send(categories);
+
+})
+
 app.get('/', (req, res) => {
     res.send(`Recycle Bin server is running`)
 });
