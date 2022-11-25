@@ -21,6 +21,7 @@ async function run() {
     const categoriesCollection = client.db('recycleBIN').collection('categories');
     const productsCollection = client.db('recycleBIN').collection('products');
     const bookingsCollection = client.db('recycleBIN').collection('bookings');
+    const usersCollection = client.db('recycleBIN').collection('users');
 
     try {
         app.get('/categories', async (req, res) => {
@@ -36,12 +37,18 @@ async function run() {
             const results = await productsCollection.find(query).toArray();
             res.send(results)
         })
+
+        app.post('/products', async (req, res) => {
+            const body = req.body;
+            const results = await productsCollection.insertOne(query);
+            res.send(results)
+        })
         app.get('/addDate', async (req, res) => {
             const filter = {};
             const option = { upsert: true };
             const updateDoc = {
-                $currentDate: {
-                    postedAt: true
+                $set: {
+                    email: "fazlerabbi@gmail.com"
                 }
             }
             const results = await productsCollection.updateMany(filter, updateDoc, option);
@@ -66,9 +73,23 @@ async function run() {
 
         app.post('/bookings', async (req, res) => {
             const query = req.body;
-            const results = await bookingsCollection.updateOne(query).toArray();
+            const results = await bookingsCollection.insertOne(query);
             res.send(results)
         });
+
+        //user collection
+        app.post('/users', async (req, res) => {
+            const query = req.body;
+            const results = await usersCollection.insertOne(query);
+            res.send(results)
+        })
+
+        app.get('/users', async (req, res) => {
+            const query = req.query.email;
+            const option = { email: query }
+            const results = await usersCollection.find(option).toArray();
+            res.send(results)
+        })
 
 
     }
