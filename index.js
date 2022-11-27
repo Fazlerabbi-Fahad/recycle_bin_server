@@ -21,6 +21,7 @@ async function run() {
     const productsCollection = client.db('recycleBIN').collection('products');
     const bookingsCollection = client.db('recycleBIN').collection('bookings');
     const usersCollection = client.db('recycleBIN').collection('users');
+    const messagesCollection = client.db('recycleBIN').collection('messages');
 
     try {
         app.get('/categories', async (req, res) => {
@@ -161,7 +162,12 @@ async function run() {
             res.send(results)
         })
 
-
+        //messages
+        app.post('/messages', async (req, res) => {
+            const query = req.body;
+            const results = await messagesCollection.insertOne(query)
+            res.send(results)
+        })
 
 
     }
