@@ -5,8 +5,6 @@ const app = express();
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 const port = process.env.PORT || 5000;
 require('dotenv').config()
-const stripe = require('stripe')(process.env.REACT_APP_secret_key)
-
 
 //middleware
 app.use(cors());
@@ -161,40 +159,6 @@ async function run() {
             const id = req.params.id;
             const results = await usersCollection.deleteOne(query);
             res.send(results)
-        })
-
-        //payment
-        app.post('/create-payment-intent', async (req, res) => {
-            const booking = req.body;
-            const price = booking.price;
-            const amount = price * 100;
-
-            const paymentIntent = await stripe.paymentIntents.create({
-                currency: 'usd',
-                amount: amount,
-                'payment_method_types': [
-                    'card'
-                ]
-            });
-
-            res.send({
-                clientSecret: paymentIntent.client_secret,
-            })
-        })
-
-        app.post('/payments', async (req, res) => {
-            const body = req.body;
-            const payments = await paymentsCollection.insertOne(body)
-            const id = body.bookingId;
-            const filter = { _id: ObjectId(id) }
-            const updateDoc = {
-                $set: {
-                    paid: true,
-                    transactionId: body.transactionId,
-                }
-            }
-            const updatedResult = await bookingsCollection.updateOne(filter, updateDoc)
-            res.send(payments)
         })
 
 
